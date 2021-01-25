@@ -1,12 +1,17 @@
-import React from 'react';
+import React from "react";
 import { NavBar } from "./components/NavBar";
 import { Menu } from "./components/Menu";
+import { ModalItem } from "./components/ModalItem";
 
 function App() {
+  const [openItem, setOpenItem] = React.useState(null);
+  console.log("openItem: ", openItem);
+
   return (
     <>
       <NavBar />
-      <Menu />
+      <Menu setOpenItem={setOpenItem} />
+      <ModalItem openItem={openItem} setOpenItem={setOpenItem}/>
     </>
   );
 }
