@@ -1,6 +1,6 @@
 import React from "react";
-import logoImg from "../image/logo.svg";
-import sigInImg from "../image/sign.svg";
+import logoImg from "../../image/logo.svg";
+import sigInImg from "../../image/sign.svg";
 
 export const NavBar = () => (
   <div className="header">
