@@ -1,11 +1,12 @@
 import React from "react";
+import { totalPriceItems } from "../modal/ModalItem";
 
 export const OrderListItem = ({ order }) => (
   <div className="order-item">
     <span className="item-name">{order.name}</span>
-    <span>5</span>
+    <span>{order.count}</span>
     <span className="item-price">
-      {order.price.toLocaleString("ru-RU", {
+      {totalPriceItems(order).toLocaleString("ru-RU", {
         style: "currency",
         currency: "RUB",
       })}

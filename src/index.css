@@ -196,7 +196,7 @@ p {
   border: none;
 }
 
-.order-item{
+.order-item {
   display: flex;
   margin: 15px 0;
 }
@@ -211,6 +211,14 @@ p {
   text-align: right;
 }
 
-.empty-list{
+.empty-list {
   text-align: center;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
