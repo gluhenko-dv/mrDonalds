@@ -1,11 +1,18 @@
 import React from "react";
 import { ButtonCheckout } from "../ButtonCheckout";
 import { OrderListItem } from "./OrderListItem";
-import { totalPriceItems } from "../modal/ModalItem";
+import {
+  totalPriceItems,
+  formatCurrency,
+} from "../functions/secondaryFunction";
 
 export const Order = ({ orders }) => {
   const total = orders.reduce(
     (result, order) => totalPriceItems(order) + result,
+    0
+  );
+  const totalCounter = orders.reduce(
+    (result, order) => order.count + result,
     0
   );
 
@@ -27,13 +34,8 @@ export const Order = ({ orders }) => {
         </div>
         <div className="total">
           <span>Итого</span>
-          <span>5</span>
-          <span>
-            {total.toLocaleString("ru-RU", {
-              style: "currency",
-              currency: "RUB",
-            })}
-          </span>
+          <span>{totalCounter}</span>
+          <span className="total-price" >{formatCurrency(total)}</span>
         </div>
         <ButtonCheckout>Отправить</ButtonCheckout>
       </div>

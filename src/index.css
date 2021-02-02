@@ -222,3 +222,25 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
+
+.total-price {
+  margin-left: 10px;
+}
+
+.toping {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 40px;
+  column-count: 2;
+  column-gap: 15px;
+}
+
+.toping-label {
+  cursor: pointer;
+  display: block;
+}
+
+.toping-checkbox {
+  cursor: pointer;
+  margin-right: 5px;
+}
