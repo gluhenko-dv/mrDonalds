@@ -2,6 +2,7 @@ import React from "react";
 import { ButtonCheckout } from "../ButtonCheckout";
 import { OrderListItem } from "./OrderListItem";
 import { totalPriceItems } from "../modal/ModalItem";
+import { toLocalRu } from "../functions/secondaryFunction";
 
 export const Order = ({ orders }) => {
   const total = orders.reduce(
@@ -29,10 +30,7 @@ export const Order = ({ orders }) => {
           <span>Итого</span>
           <span>5</span>
           <span>
-            {total.toLocaleString("ru-RU", {
-              style: "currency",
-              currency: "RUB",
-            })}
+            {toLocalRu(total)}
           </span>
         </div>
         <ButtonCheckout>Отправить</ButtonCheckout>

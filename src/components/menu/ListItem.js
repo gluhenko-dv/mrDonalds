@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import { toLocalRu } from "../functions/secondaryFunction";
 
 const Item = styled.li`
   background-image: ${({ img }) => `url(${img})`};
@@ -15,12 +15,7 @@ export const ListItem = ({ itemList, setOpenItem }) => (
         className="list-item"
       >
         <p>{item.name}</p>
-        <p>
-          {item.price.toLocaleString("ru-RU", {
-            style: "currency",
-            currency: "RUB",
-          })}
-        </p>
+        <p>{toLocalRu(item.price)}</p>
       </Item>
     ))}
   </ul>

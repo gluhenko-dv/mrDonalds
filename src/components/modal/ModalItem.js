@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ButtonCheckout } from "../ButtonCheckout";
 import { useCount } from "../hooks/useCount";
 import { CountItem } from "./CountItem";
-
+import { toLocalRu } from "../functions/secondaryFunction";
 const Banner = styled.div`
   width: 100%;
   height: 200px;
@@ -49,10 +49,7 @@ export const ModalItem = ({ openItem, setOpenItem, orders, setOrders }) => {
           <TotalPriceItem>
             <span>Цена:</span>
             <span>
-              {totalPriceItems(order).toLocaleString("ru-RU", {
-                style: "currency",
-                currency: "RUB",
-              })}
+              { toLocalRu(totalPriceItems(order)) }
             </span>
           </TotalPriceItem>
           <ButtonCheckout onClick={addToOrder}>Добавить</ButtonCheckout>
