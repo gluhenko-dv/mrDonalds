@@ -1,15 +1,10 @@
 import React from "react";
 import { ButtonCheckout } from "../ButtonCheckout";
 import { OrderListItem } from "./OrderListItem";
-<<<<<<< HEAD
 import {
   totalPriceItems,
   formatCurrency,
 } from "../functions/secondaryFunction";
-=======
-import { totalPriceItems } from "../modal/ModalItem";
-import { toLocalRu } from "../functions/secondaryFunction";
->>>>>>> a69f97973e7d5804f8585a9b7820797cd24280f7
 
 export const Order = ({ orders }) => {
   const total = orders.reduce(
@@ -39,15 +34,8 @@ export const Order = ({ orders }) => {
         </div>
         <div className="total">
           <span>Итого</span>
-<<<<<<< HEAD
           <span>{totalCounter}</span>
           <span className="total-price" >{formatCurrency(total)}</span>
-=======
-          <span>5</span>
-          <span>
-            {toLocalRu(total)}
-          </span>
->>>>>>> a69f97973e7d5804f8585a9b7820797cd24280f7
         </div>
         <ButtonCheckout>Отправить</ButtonCheckout>
       </div>

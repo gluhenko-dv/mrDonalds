@@ -3,16 +3,13 @@ import styled from "styled-components";
 import { ButtonCheckout } from "../ButtonCheckout";
 import { useCount } from "../hooks/useCount";
 import { CountItem } from "./CountItem";
-<<<<<<< HEAD
 import {
   totalPriceItems,
   formatCurrency,
 } from "../functions/secondaryFunction";
 import { Toppings } from "./Toppings";
 import { useToppings } from "../hooks/useToppngs";
-=======
-import { toLocalRu } from "../functions/secondaryFunction";
->>>>>>> a69f97973e7d5804f8585a9b7820797cd24280f7
+
 const Banner = styled.div`
   width: 100%;
   height: 200px;
@@ -38,7 +35,7 @@ export const ModalItem = ({ openItem, setOpenItem, orders, setOrders }) => {
   const order = {
     ...openItem,
     count: counter.count,
-    topping: toppings.toppings
+    topping: toppings.toppings,
   };
 
   const addToOrder = () => {
@@ -59,13 +56,7 @@ export const ModalItem = ({ openItem, setOpenItem, orders, setOrders }) => {
           {openItem.toppings && <Toppings {...toppings} />}
           <TotalPriceItem>
             <span>Цена:</span>
-<<<<<<< HEAD
             <span>{formatCurrency(totalPriceItems(order))}</span>
-=======
-            <span>
-              { toLocalRu(totalPriceItems(order)) }
-            </span>
->>>>>>> a69f97973e7d5804f8585a9b7820797cd24280f7
           </TotalPriceItem>
           <ButtonCheckout onClick={addToOrder}>Добавить</ButtonCheckout>
         </div>

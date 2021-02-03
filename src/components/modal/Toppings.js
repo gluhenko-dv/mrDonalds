@@ -2,11 +2,21 @@ import React from "react";
 
 export function Toppings({ toppings, checkToppings }) {
   return (
-    <div className="toping">
-      <label className="toping-label">
-        <input className="toping-checkbox" type="checkbox" />
-        допы
-      </label>
-    </div>
+    <>
+      <h3 className="topping-title" >Добавки</h3>
+      <div className="toping">
+        {toppings.map((item, i) => (
+          <label className="toping-label" key={i}>
+            <input
+              className="toping-checkbox"
+              type="checkbox"
+              checked={item.checked}
+              onChange={() => checkToppings(i)}
+            />
+            {item.name}
+          </label>
+        ))}
+      </div>
+    </>
   );
 }
