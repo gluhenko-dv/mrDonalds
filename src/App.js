@@ -3,8 +3,8 @@ import { NavBar } from "./components/navbar/NavBar";
 import { Menu } from "./components/menu/Menu";
 import { ModalItem } from "./components/modal/ModalItem";
 import { Order } from "./components/order/Order";
-import { useOpenItem } from "./components/hooks/useOpenItem";
-import { useOrders } from "./components/hooks/useOrders";
+import { useOpenItem } from "./components/hooks/useOpenItem.ts";
+import { useOrders } from "./components/hooks/useOrders.ts";
 
 function App() {
   const openItem = useOpenItem();
