@@ -14,7 +14,12 @@ export const ButtonCheckout = styled.button`
   line-height: 25px;
   color: #fff;
   &:hover {
-  cursor: pointer;
-  opacity: 0.9;
-}
+    cursor: pointer;
+    opacity: 0.9;
+  }
+  &:disabled {
+    color: #bbbb;
+    background-color: #ccc;
+    border-color: #aaa;
+  }
 `;

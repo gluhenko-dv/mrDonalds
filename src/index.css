@@ -200,6 +200,7 @@ p {
   display: flex;
   margin: 15px 0;
   flex-wrap: wrap;
+  cursor: pointer;
 }
 
 .item-name {
@@ -235,7 +236,7 @@ input::-webkit-inner-spin-button {
   margin-left: 10px;
 }
 
-.toping {
+.toping, .choice {
   max-width: 500px;
   margin: 0 auto;
   padding: 0 40px;
@@ -252,7 +253,7 @@ input::-webkit-inner-spin-button {
   font-size: 30px;
 }
 
-.toping-label {
+.toping-label, .choice-label {
   cursor: pointer;
   display: block;
 }

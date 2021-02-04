@@ -6,7 +6,13 @@ import {
   formatCurrency,
 } from "../functions/secondaryFunction";
 
-export const Order = ({ orders }) => {
+
+export const Order = ({ orders, setOrders, setOpenItem }) => {
+  const deleteItem = (index) => {
+    const newOrders = orders.filter((item, i) => index !== i);
+    setOrders(newOrders);
+  };
+
   const total = orders.reduce(
     (result, order) => totalPriceItems(order) + result,
     0
@@ -24,8 +30,14 @@ export const Order = ({ orders }) => {
         <div className="order-content">
           {orders.length ? (
             <div className="order-list">
-              {orders.map((order) => (
-                <OrderListItem order={order} />
+              {orders.map((order, index) => (
+                <OrderListItem
+                  order={order}
+                  key={index}
+                  deleteItem={deleteItem}
+                  setOpenItem={setOpenItem}
+                  index={index}
+                />
               ))}
             </div>
           ) : (
@@ -35,7 +47,7 @@ export const Order = ({ orders }) => {
         <div className="total">
           <span>Итого</span>
           <span>{totalCounter}</span>
-          <span className="total-price" >{formatCurrency(total)}</span>
+          <span className="total-price">{formatCurrency(total)}</span>
         </div>
         <ButtonCheckout>Отправить</ButtonCheckout>
       </div>
