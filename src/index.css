@@ -10,7 +10,9 @@
   font-style: normal;
   font-weight: 400;
 }
-
+#root {
+  width: 100%;
+}
 h1,
 h2,
 h3 {
@@ -29,11 +31,15 @@ p {
 }
 
 .header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99999;
   display: flex;
   justify-content: space-between;
   background: #299b01;
   height: 80px;
-  padding: 0 20px;
 }
 
 .header-logo {
@@ -236,7 +242,8 @@ input::-webkit-inner-spin-button {
   margin-left: 10px;
 }
 
-.toping, .choice {
+.toping,
+.choice {
   max-width: 500px;
   margin: 0 auto;
   padding: 0 40px;
@@ -253,7 +260,8 @@ input::-webkit-inner-spin-button {
   font-size: 30px;
 }
 
-.toping-label, .choice-label {
+.toping-label,
+.choice-label {
   cursor: pointer;
   display: block;
 }
