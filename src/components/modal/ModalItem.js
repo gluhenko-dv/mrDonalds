@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ButtonCheckout } from "../ButtonCheckout";
-import { useCount } from "../hooks/useCount.ts";
+import { useCount } from "../hooks/useCount";
 import { CountItem } from "./CountItem";
 import {
   totalPriceItems,
@@ -10,8 +10,8 @@ import {
 import { Toppings } from "./Toppings";
 import { Choices } from "./Choices";
 
-import { useToppings } from "../hooks/useToppngs.ts";
-import { useChoices } from "../hooks/useChoices.ts";
+import { useToppings } from "../hooks/useToppngs";
+import { useChoices } from "../hooks/useChoices";
 
 const Banner = styled.div`
   width: 100%;

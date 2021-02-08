@@ -7,7 +7,7 @@ import {
 } from "../functions/secondaryFunction";
 
 
-export const Order = ({ orders, setOrders, setOpenItem }) => {
+export const Order = ({ orders, setOrders, setOpenItem, authentication, logIn }) => {
   const deleteItem = (index) => {
     const newOrders = orders.filter((item, i) => index !== i);
     setOrders(newOrders);
@@ -49,7 +49,7 @@ export const Order = ({ orders, setOrders, setOpenItem }) => {
           <span>{totalCounter}</span>
           <span className="total-price">{formatCurrency(total)}</span>
         </div>
-        <ButtonCheckout>Отправить</ButtonCheckout>
+        <ButtonCheckout onClick={() => authentication ? console.log(orders) : logIn()} >Отправить</ButtonCheckout>
       </div>
     </>
   );

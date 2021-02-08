@@ -5,8 +5,8 @@ import { NavBar } from "./components/navbar/NavBar";
 import { Menu } from "./components/menu/Menu";
 import { ModalItem } from "./components/modal/ModalItem";
 import { Order } from "./components/order/Order";
-import { useOpenItem } from "./components/hooks/useOpenItem.ts";
-import { useOrders } from "./components/hooks/useOrders.ts";
+import { useOpenItem } from "./components/hooks/useOpenItem";
+import { useOrders } from "./components/hooks/useOrders";
 import { useAuth } from "./components/hooks/useAuth";
 
 const firebaseConfig = {
@@ -29,7 +29,7 @@ function App() {
   return (
     <>
       <NavBar {...auth } />
-      <Order {...orders} {...openItem} />
+      <Order {...orders} {...openItem}  {...auth } />
       <Menu {...openItem} />
       {openItem.openItem && <ModalItem {...openItem} {...orders} />}
     </>
