@@ -1,22 +1,19 @@
-import React from "react";
-import styled from "styled-components";
-import { ButtonCheckout } from "../ButtonCheckout";
-import { useCount } from "../hooks/useCount";
-import { CountItem } from "./CountItem";
-import {
-  totalPriceItems,
-  formatCurrency,
-} from "../functions/secondaryFunction";
-import { Toppings } from "./Toppings";
-import { Choices } from "./Choices";
+import React from 'react';
+import styled from 'styled-components';
+import {ButtonCheckout} from '../ButtonCheckout';
+import {useCount} from '../hooks/useCount';
+import {CountItem} from './CountItem';
+import {totalPriceItems, formatCurrency} from '../functions/secondaryFunction';
+import {Toppings} from './Toppings';
+import {Choices} from './Choices';
 
-import { useToppings } from "../hooks/useToppngs";
-import { useChoices } from "../hooks/useChoices";
+import {useToppings} from '../hooks/useToppngs';
+import {useChoices} from '../hooks/useChoices';
 
 const Banner = styled.div`
   width: 100%;
   height: 200px;
-  background-image: url(${({ img }) => img});
+  background-image: url(${({img}) => img});
   background-position: center;
   background-size: cover;
 `;
@@ -26,13 +23,13 @@ const TotalPriceItem = styled.div`
   padding: 40px;
 `;
 
-export const ModalItem = ({ openItem, setOpenItem, orders, setOrders }) => {
+export const ModalItem = ({openItem, setOpenItem, orders, setOrders}) => {
   const counter = useCount(openItem.count);
   const toppings = useToppings(openItem);
   const choices = useChoices(openItem);
   const isEdit = openItem.index > -1;
   const closeModal = (e) => {
-    if (e.target.id === "overlay") {
+    if (e.target.id === 'overlay') {
       setOpenItem(null);
     }
   };
@@ -72,10 +69,7 @@ export const ModalItem = ({ openItem, setOpenItem, orders, setOrders }) => {
             <span>Цена:</span>
             <span>{formatCurrency(totalPriceItems(order))}</span>
           </TotalPriceItem>
-          <ButtonCheckout
-            onClick={isEdit ? editOrder : addToOrder}
-            disabled={order.choices && !order.choice}
-          >
+          <ButtonCheckout onClick={isEdit ? editOrder : addToOrder} disabled={order.choices && !order.choice}>
             {isEdit ? `Редактировать` : `Добавить`}
           </ButtonCheckout>
         </div>

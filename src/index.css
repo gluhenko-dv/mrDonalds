@@ -1,12 +1,12 @@
 @font-face {
   font-family: "Pacifico";
-  src: url(./fonts/Pacifico-Regular.ttf) format("truetype");
+  src: url(./Assets/fonts/Pacifico-Regular.ttf) format("truetype");
   font-style: normal;
   font-weight: 400;
 }
 @font-face {
   font-family: "Roboto";
-  src: url(./fonts/Roboto-Regular.ttf) format("truetype");
+  src: url(./Assets/fonts/Roboto-Regular.ttf) format("truetype");
   font-style: normal;
   font-weight: 400;
 }
@@ -195,7 +195,7 @@ p {
   width: 24px;
   height: 24px;
   border-color: transparent;
-  background-image: url("./image/trash.svg");
+  background-image: url("./Assets/image/trash.svg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

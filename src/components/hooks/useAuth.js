@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {useEffect, useState} from 'react';
 
 export function useAuth(authFirebase) {
   const [authentication, setAuthentication] = useState(null);
@@ -9,20 +9,10 @@ export function useAuth(authFirebase) {
 
   const logIn = () => auth.signInWithPopup(provider);
 
-  const logOut = () =>
-    auth
-      .signOut()
-      .then()
-      .catch((err) => console.error(err));
+  const logOut = () => auth.signOut().catch((err) => console.error(err));
 
   useEffect(() => {
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        setAuthentication(user);
-      } else {
-        setAuthentication(null);
-      }
-    });
+    auth.onAuthStateChanged((user) => setAuthentication(user || null));
   }, [auth]);
-  return { authentication, logIn, logOut };
+  return {authentication, logIn, logOut};
 }

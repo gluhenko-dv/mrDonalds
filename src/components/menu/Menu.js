@@ -1,9 +1,9 @@
-import React from "react";
-import dbMenu from "./DBMenu";
-import { ListItem } from "./ListItem";
-import { Banner } from "./Banner";
+import React from 'react';
+import dbMenu from './DBMenu';
+import {ListItem} from './ListItem';
+import {Banner} from './Banner';
 
-export const Menu = ({ setOpenItem }) => (
+export const Menu = ({setOpenItem}) => (
   <div className="menu">
     <Banner />
     <section className="menu-list">
@@ -12,7 +12,7 @@ export const Menu = ({ setOpenItem }) => (
     </section>
     <section className="menu-list">
       <h2>Закуски и напитки</h2>
-      <ListItem itemList={dbMenu.other} setOpenItem={setOpenItem}/>
+      <ListItem itemList={dbMenu.other} setOpenItem={setOpenItem} />
     </section>
   </div>
 );
