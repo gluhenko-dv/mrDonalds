@@ -13,6 +13,6 @@ export function useAuth(authFirebase) {
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => setAuthentication(user || null));
-  }, [auth]);
+  }, [auth, authentication]);
   return {authentication, logIn, logOut};
 }
