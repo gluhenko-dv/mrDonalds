@@ -3,7 +3,8 @@ import {ListItem} from './ListItem';
 import {Banner} from './Banner';
 import {useFetch} from '../hooks/useFetch';
 
-export const Menu = ({setOpenItem}) => {
+
+export const Menu = () => {
   const res = useFetch();
   const dbMenu = res.response;
   return (
@@ -13,11 +14,11 @@ export const Menu = ({setOpenItem}) => {
         <>
           <section className="menu-list">
             <h2>Бургеры</h2>
-            <ListItem itemList={dbMenu.burger} setOpenItem={setOpenItem} />
+            <ListItem itemList={dbMenu.burger}/>
           </section>
           <section className="menu-list">
             <h2>Закуски и напитки</h2>
-            <ListItem itemList={dbMenu.other} setOpenItem={setOpenItem} />
+            <ListItem itemList={dbMenu.other}/>
           </section>
         </>
       ) : res.error ? (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
 import styled from 'styled-components';
 import {ButtonCheckout} from '../ButtonCheckout';
@@ -10,6 +10,7 @@ import {Choices} from './Choices';
 
 import {useToppings} from '../hooks/useToppngs';
 import {useChoices} from '../hooks/useChoices';
+import {Context} from '../functions/context';
 
 const Banner = styled.div`
   width: 100%;
@@ -24,7 +25,12 @@ const TotalPriceItem = styled.div`
   padding: 40px;
 `;
 
-export const ModalItem = ({openItem, setOpenItem, orders, setOrders}) => {
+export const ModalItem = () => {
+  const {
+    orders: {orders, setOrders},
+    openItem: {openItem, setOpenItem},
+  } = useContext(Context);
+
   const counter = useCount(openItem.count);
   const toppings = useToppings(openItem);
   const choices = useChoices(openItem);

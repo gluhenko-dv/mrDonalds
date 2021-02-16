@@ -10,6 +10,7 @@ import {useOpenItem} from './components/hooks/useOpenItem';
 import {useOrders} from './components/hooks/useOrders';
 import {useAuth} from './components/hooks/useAuth';
 import {useTitle} from './components/hooks/useTitle';
+import {Context} from './components/functions/context';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAwxxuAvd_PS39Eyyf4xn1hP8P_UE3xbHU',
@@ -30,14 +31,20 @@ function App() {
   useTitle(openItem.openItem);
 
   return (
-    <>
-      <NavBar {...auth} />
-      <Order firebaseDatabase={firebase.database} {...orders} {...openItem} {...auth} />
-      <Menu {...openItem} />
-      {openItem.openItem && <ModalItem {...openItem} {...orders} />}
-    </>
+    <Context.Provider
+      value={{
+        auth,
+        openItem,
+        orders,
+        firebaseDatabase: firebase.database
+      }}
+    >
+      <NavBar />
+      <Order />
+      <Menu />
+      {openItem.openItem && <ModalItem/>}
+    </Context.Provider>
   );
-
 }
 
 export default App;

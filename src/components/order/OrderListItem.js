@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {Context} from '../functions/context';
 import {totalPriceItems, formatCurrency} from '../functions/secondaryFunction';
-export const OrderListItem = ({order, index, deleteItem, setOpenItem}) => {
+export const OrderListItem = ({order, index, deleteItem}) => {
+  const { openItem: {setOpenItem}} = useContext(Context);
   const topping = order.topping
     .filter((item) => item.checked)
     .map((item) => item.name)
